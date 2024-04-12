@@ -13,7 +13,7 @@
  */
 namespace Workerman\Http;
 
-use \Workerman\Connection\AsyncTcpConnection;
+// use \Workerman\Connection\AsyncTcpConnection;
 use \Workerman\Timer;
 use Workerman\Psr7\Uri;
 
