@@ -52,10 +52,14 @@ class ParallelClient extends Client
 
             $options['error'] = function ($exception) use (&$result, &$suspension, $errorThrow, $options, $index) {
                 $result[$index] = [false, $exception];
-                if ($errorThrow) {
-                    $suspension->throw($exception);
-                } else {
-                    $suspension->resume();
+                try {
+                    if ($errorThrow) {
+                        $suspension->throw($exception);
+                    } else {
+                        $suspension->resume();
+                    }
+                } catch (Throwable $e) {
+                    unset($suspension);
                 }
                 // custom callback
                 if (!empty($options['error'])) {
