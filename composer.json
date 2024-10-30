@@ -5,7 +5,7 @@
   "license": "MIT",
   "require": {
     "workerman/psr7": ">=1.4.3",
-    "workerman/workerman": "v5.0.0-beta.7"
+    "workerman/workerman": "^4.1|^v5.0@rc"
   },
   "autoload": {
     "psr-4": {
